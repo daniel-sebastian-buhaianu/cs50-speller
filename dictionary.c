@@ -33,8 +33,11 @@ bool check(const char *word)
 // Hashes word to a number
 unsigned int hash(const char *word)
 {
-    // TODO: Improve this hash function
-    return toupper(word[0]) - 'A';
+	if (word[0] == '\'')
+	{
+		return 26;
+	}
+	return toupper(word[0]) - 'A';
 }
 
 // Loads dictionary into memory, returning true if successful, else false
@@ -51,8 +54,18 @@ bool load(const char *dictionary)
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
 unsigned int size(void)
 {
-    // TODO
-    return 0;
+	int count = 0;
+	char word[LENGTH + 1];
+	if (dicfile == NULL)
+	{
+		return 0;
+	}
+	while (fgets(word, LENGTH + 1, dicfile))
+	{
+		count++;
+	}
+	printf("count: %i\n", count);
+	return count;
 }
 
 // Unloads dictionary from memory, returning true if successful, else false
