@@ -22,7 +22,8 @@ bool check(const char *word);
 unsigned int hash(const char *word);
 bool load(const char *dictionary);
 unsigned int size(void);
-void unload_trie(trie_node *ptr);
+void unload_trie(trie_node *node);
 bool unload(void);
-void add_word(trie_node *ptr, char *word);
+void add_word(trie_node *node, char *word);
+
 #endif // DICTIONARY_H

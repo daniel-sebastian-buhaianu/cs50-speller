@@ -163,6 +163,7 @@ int main(int argc, char *argv[])
     // Calculate time to unload dictionary
     time_unload = calculate(&before, &after);
 
+
     // Report benchmarks
     printf("\nWORDS MISSPELLED:     %d\n", misspellings);
     printf("WORDS IN DICTIONARY:  %d\n", n);
